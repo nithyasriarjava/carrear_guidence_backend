@@ -30,9 +30,9 @@ from sqlalchemy.ext.declarative import declarative_base
 # Purpose:
 # MySQL database address save panna
 
-DATABASE_URL="mysql+pymysql://root:Nith123$%^@localhost/career_guidance_db"
+# DATABASE_URL="mysql+pymysql://root:Nith123$%^@localhost/career_guidance_db"
 
-
+DATABASE_URL="mysql+pymysql://2ffrzxKprZiK4cS.root:gp8unP1T9zyKslNS@gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com:4000/career_guidance_db"
 
 # mysql+pymysql
 # Meaning:
