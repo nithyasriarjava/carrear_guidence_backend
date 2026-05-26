@@ -1,80 +1,94 @@
 # fastapi library la irunthu FastAPI import panrom
 #
-# from
-# Meaning:
-# Enga irunthu edukanum
-#
-# fastapi
-# Meaning:
-# Library name
-#
-# import
-# Meaning:
-# Use panna import panrom
-#
-# FastAPI
-# Meaning:
-# Main FastAPI application create panna class
+# Purpose:
+# Main backend application create panna
 
 from fastapi import FastAPI
 
 
 
 
-# routes folder la iruka skills.py file la
-# router object import panrom
+# Skills router import panrom
 #
-# from
-# Meaning:
-# Enga irunthu import panrom
-#
-# routes.skills
-# Meaning:
-# routes folder → skills.py
-#
-# router
-# Meaning:
-# skills.py la create panna router object
-#
-# as skills_router
-# Meaning:
-# Easy name kudukrom
+# Purpose:
+# /skills API work panna
 
 from routes.skills import router as skills_router
 
 
 
 
-# FastAPI object create panrom
+# Departments router import panrom
 #
-# app
-# Meaning:
-# Variable name
+# Purpose:
+# /departments API work panna
+
+from routes.departments import router as department_router
+
+
+
+
+# Interests router import panrom
 #
-# =
-# Meaning:
-# Value assign panrom
+# Purpose:
+# /interests API work panna
+
+from routes.interests import router as interests_router
+
+
+
+
+# Careers router import panrom
 #
-# FastAPI()
-# Meaning:
-# Main application create pannum
+# Purpose:
+# /careers API work panna
+
+from routes.careers import router as careers_router
+
+
+
+
+# Roadmaps router import panrom
+#
+# Purpose:
+# /roadmaps API work panna
+
+from routes.roadmaps import router as roadmaps_router
+
+
+
+
+# Career Skills router import panrom
+#
+# Purpose:
+# /career-skills API work panna
+
+from routes.career_skills import router as career_skills_router
+
+
+
+
+# Career Interests router import panrom
+#
+# Purpose:
+# /career-interests API work panna
+
+from routes.career_interests import router as career_interests_router
+
+
+
+from routes.learning_resources import router as learning_resources_router
+
+from routes.user_progress import router as user_progress_router
+
+# FastAPI app create panrom
 
 app = FastAPI()
 
 
 
 
-# Main app kooda skills router connect panrom
-#
-# include_router()
-#
-# Meaning:
-# External API file ah app-kulla add pannum
-#
-# Without this:
-#
-# skills.py create pannalum
-# API work aagathu
+# Skills API connect panrom
 
 app.include_router(
 
@@ -85,57 +99,91 @@ app.include_router(
 
 
 
-# GET API create panrom
-#
-# @
-# Meaning:
-# Decorator
-#
-# app.get("/")
-#
-# Meaning:
-# Browser la
-#
-# http://localhost:8000
-#
-# open pannina
-#
-# keela iruka function run aagum
+# Departments API connect panrom
+
+app.include_router(
+
+    department_router
+
+)
+
+
+
+
+# Interests API connect panrom
+
+app.include_router(
+
+    interests_router
+
+)
+
+
+
+
+# Careers API connect panrom
+
+app.include_router(
+
+    careers_router
+
+)
+
+
+
+
+# Roadmaps API connect panrom
+
+app.include_router(
+
+    roadmaps_router
+
+)
+
+
+
+
+# Career Skills API connect panrom
+
+app.include_router(
+
+    career_skills_router
+
+)
+
+
+
+
+# Career Interests API connect panrom
+
+app.include_router(
+
+    career_interests_router
+
+)
+
+
+app.include_router(
+
+learning_resources_router
+
+)
+
+app.include_router(
+
+user_progress_router
+
+)
+
+# Home page API
 
 @app.get("/")
 
-
-
-
-# Function create panrom
-#
-# def
-# Meaning:
-# Function create panna keyword
-#
-# home
-# Meaning:
-# Function name
-
 def home():
 
-
-
-    # return
-    #
-    # Meaning:
-    # User-ku response send pannum
-
     return {
-
-        # JSON object send panrom
-        #
-        # message
-        # key
-        #
-        # "Career Guidance Backend Running"
-        # value
 
         "message":"Career Guidance Backend Running"
 
     }
+

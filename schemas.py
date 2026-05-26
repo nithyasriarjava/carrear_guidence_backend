@@ -38,3 +38,136 @@ class SkillResponse(BaseModel):
         # SQLAlchemy object attributes read panna allow pannum
 
         from_attributes=True
+
+
+
+class DepartmentResponse(BaseModel):
+
+    id:int
+
+    department_name:str
+
+
+    class Config:
+
+        from_attributes=True
+
+
+class InterestResponse(BaseModel):
+
+    id:int
+    interest_name:str
+
+    class Config:
+
+        from_attributes=True
+
+
+
+
+class CareerResponse(BaseModel):
+
+    id:int
+    career_name:str
+    description:str
+    salary:str
+    difficulty:str
+    growth:str
+
+    class Config:
+
+        from_attributes=True
+
+
+
+
+class RoadmapResponse(BaseModel):
+
+    id:int
+    career_id:int
+    step_number:int
+    step_title:str
+    step_description:str
+
+    class Config:
+
+        from_attributes=True
+
+
+
+
+class CareerSkillResponse(BaseModel):
+
+    id:int
+    career_id:int
+    skill_id:int
+
+    class Config:
+
+        from_attributes=True
+
+
+
+
+class CareerInterestResponse(BaseModel):
+
+    id:int
+    career_id:int
+    interest_id:int
+
+    class Config:
+
+        from_attributes=True
+
+
+        # LearningResource response schema create panrom
+
+class LearningResourceResponse(BaseModel):
+
+
+    id:int
+
+
+    career_id:int
+
+
+    title:str
+
+
+    resource_type:str
+
+
+    url:str
+
+
+
+    class Config:
+
+        from_attributes=True
+
+
+
+        # UserProgress response schema create panrom
+
+class UserProgressResponse(BaseModel):
+
+
+    id:int
+
+
+    user_id:str
+
+
+    career_id:int
+
+
+    completed_step:int
+
+
+    progress_percentage:int
+
+
+
+    class Config:
+
+        from_attributes=True
