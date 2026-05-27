@@ -28,7 +28,7 @@ def get_db():
 
 @router.get(
 
-"/career-interests",
+"/career_interests",
 
 response_model=list[CareerInterestResponse]
 

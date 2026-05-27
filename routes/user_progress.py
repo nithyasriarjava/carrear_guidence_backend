@@ -28,7 +28,7 @@ def get_db():
 
 @router.get(
 
-"/user-progress",
+"/user_progress",
 
 response_model=list[UserProgressResponse]
 

@@ -28,7 +28,7 @@ def get_db():
 
 @router.get(
 
-"/learning-resources",
+"/learning_resources",
 
 response_model=list[LearningResourceResponse]
 
