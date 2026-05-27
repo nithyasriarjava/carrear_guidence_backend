@@ -77,7 +77,7 @@ from routes.career_skills import router as career_skills_router
 
 from routes.career_interests import router as career_interests_router
 
-
+from routes.career_departments import router as career_departments_router
 
 from routes.learning_resources import router as learning_resources_router
 
@@ -112,6 +112,9 @@ app.include_router(
 )
 
 
+app.include_router(
+    career_departments_router
+)
 
 
 # Departments API connect panrom

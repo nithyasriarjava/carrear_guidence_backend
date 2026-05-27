@@ -263,3 +263,23 @@ class UserProgress(Base):
         Integer
 
     )
+
+class CareerDepartments(Base):
+
+    __tablename__ = "career_departments"
+
+    id = Column(
+        Integer,
+        primary_key=True,
+        index=True
+    )
+
+    career_id = Column(
+        Integer,
+        ForeignKey("careers.id")
+    )
+
+    department_id = Column(
+        Integer,
+        ForeignKey("departments.id")
+    )

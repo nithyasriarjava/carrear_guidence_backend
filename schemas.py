@@ -171,3 +171,14 @@ class UserProgressResponse(BaseModel):
     class Config:
 
         from_attributes=True
+
+
+class CareerDepartmentsResponse(BaseModel):
+
+    id:int
+    career_id:int
+    department_id:int
+
+    class Config:
+
+        from_attributes=True
