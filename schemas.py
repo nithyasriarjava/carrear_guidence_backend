@@ -26,7 +26,7 @@ class SkillResponse(BaseModel):
 
     skill_name:str
 
-
+    
 
     # Config class create panrom
     # Purpose:

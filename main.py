@@ -6,6 +6,8 @@
 from fastapi import FastAPI
 
 
+from fastapi.middleware.cors import CORSMiddleware
+
 
 
 # Skills router import panrom
@@ -86,6 +88,19 @@ from routes.user_progress import router as user_progress_router
 app = FastAPI()
 
 
+app.add_middleware(
+
+    CORSMiddleware,
+
+    allow_origins=["*"],
+
+    allow_credentials=True,
+
+    allow_methods=["*"],
+
+    allow_headers=["*"]
+
+)
 
 
 # Skills API connect panrom
