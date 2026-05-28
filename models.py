@@ -182,7 +182,7 @@ class LearningResources(Base):
     documentation_link = Column(String(500))
 
     practice_link = Column(String(500))
-    
+
 
     # UserProgress model create panrom
 #
@@ -233,3 +233,42 @@ class CareerDepartments(Base):
         Integer,
         ForeignKey("departments.id")
     )
+
+
+    # PROFILE SAVE 
+
+
+class UserPreferences(Base):
+
+    __tablename__ = "user_preferences"
+
+    id = Column(Integer, primary_key=True)
+
+    user_id = Column(String(255))
+
+    department_id = Column(Integer)
+
+
+
+class UserSelectedSkills(Base):
+
+    __tablename__ = "user_selected_skills"
+
+    id = Column(Integer, primary_key=True)
+
+    user_id = Column(String(255))
+
+    skill_id = Column(Integer)
+
+
+
+class UserSelectedInterests(Base):
+
+    __tablename__ = "user_selected_interests"
+
+    id = Column(Integer, primary_key=True)
+
+    user_id = Column(String(255))
+
+    interest_id = Column(Integer)
+

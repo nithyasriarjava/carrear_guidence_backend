@@ -83,6 +83,8 @@ from routes.learning_resources import router as learning_resources_router
 
 from routes.user_progress import router as user_progress_router
 
+from routes.user_preferences import router as user_preferences_router
+
 # FastAPI app create panrom
 
 app = FastAPI()
@@ -125,6 +127,14 @@ app.include_router(
 
 )
 
+app.include_router(
+    user_preferences_router
+)
+
+
+app.include_router(
+    user_preferences_router
+)
 
 
 
