@@ -164,53 +164,25 @@ class CareerInterest(Base):
 # Purpose:
 # learning_resources table connect panna
 
-class LearningResource(Base):
+class LearningResources(Base):
 
+    __tablename__ = "learning_resources"
 
-    __tablename__="learning_resources"
+    id = Column(Integer, primary_key=True)
 
-
-
-    id=Column(
-
+    skill_id = Column(
         Integer,
-
-        primary_key=True
-
+        ForeignKey("skills.id")
     )
 
+    youtube_link = Column(String(500))
 
+    w3schools_link = Column(String(500))
 
-    career_id=Column(
+    documentation_link = Column(String(500))
 
-        Integer
-
-    )
-
-
-
-    title=Column(
-
-        String(255)
-
-    )
-
-
-
-    resource_type=Column(
-
-        String(100)
-
-    )
-
-
-
-    url=Column(
-
-        String(500)
-
-    )
-
+    practice_link = Column(String(500))
+    
 
     # UserProgress model create panrom
 #
@@ -241,7 +213,7 @@ class UserProgress(Base):
     )
 
 
-    
+
 class CareerDepartments(Base):
 
     __tablename__ = "career_departments"

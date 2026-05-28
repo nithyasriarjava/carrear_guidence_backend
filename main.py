@@ -183,9 +183,7 @@ app.include_router(
 
 
 app.include_router(
-
-learning_resources_router
-
+    learning_resources_router
 )
 
 app.include_router(

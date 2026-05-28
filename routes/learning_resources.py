@@ -1,51 +1,35 @@
-from fastapi import APIRouter,Depends
+from fastapi import APIRouter, Depends
 
 from sqlalchemy.orm import Session
 
 from database import SessionLocal
 
-from models import LearningResource
+from models import LearningResources
 
-from schemas import LearningResourceResponse
+router = APIRouter()
 
-
-router=APIRouter()
 
 
 def get_db():
 
-    db=SessionLocal()
+    db = SessionLocal()
 
     try:
-
         yield db
 
     finally:
-
         db.close()
 
 
 
-@router.get(
-
-"/learning_resources",
-
-response_model=list[LearningResourceResponse]
-
-)
+@router.get("/learning_resources")
 
 def get_learning_resources(
 
-db:Session=Depends(get_db)
+    db: Session = Depends(get_db)
 
 ):
 
-
-    resources=db.query(
-
-        LearningResource
-
+    return db.query(
+        LearningResources
     ).all()
-
-
-    return resources
