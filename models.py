@@ -219,51 +219,29 @@ class LearningResource(Base):
 
 class UserProgress(Base):
 
+    __tablename__ = "user_progress"
 
-    __tablename__="user_progress"
-
-
-
-    id=Column(
-
+    id = Column(
         Integer,
-
-        primary_key=True
-
+        primary_key=True,
+        index=True
     )
 
-
-
-    user_id=Column(
-
+    user_id = Column(
         String(255)
+    )
 
+    skill_id = Column(
+        Integer,
+        ForeignKey("skills.id")
+    )
+
+    status = Column(
+        String(50)
     )
 
 
-
-    career_id=Column(
-
-        Integer
-
-    )
-
-
-
-    completed_step=Column(
-
-        Integer
-
-    )
-
-
-
-    progress_percentage=Column(
-
-        Integer
-
-    )
-
+    
 class CareerDepartments(Base):
 
     __tablename__ = "career_departments"
